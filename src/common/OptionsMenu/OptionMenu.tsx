@@ -1,17 +1,16 @@
-import React from "react";
 import OptionItem from "./components/OptionItem";
 
 //* Icon imports
-import { MdOutlineFastfood } from "react-icons/md";
 import { BsCupStraw } from "react-icons/bs";
 import { CiBowlNoodles } from "react-icons/ci";
 import {
-  GiKnifeFork,
-  GiSaucepan,
-  GiHamburger,
   GiCakeSlice,
   GiFullPizza,
+  GiHamburger,
+  GiKnifeFork,
+  GiSaucepan,
 } from "react-icons/gi";
+import { MdOutlineFastfood } from "react-icons/md";
 
 const options = [
   {
@@ -60,7 +59,7 @@ const options = [
 
 const OptionMenu = () => {
   return (
-    <div className="bg-yellow-400 flex items-center h-16 mx-40 justify-center gap-10 rounded-xl top-8 relative text-zinc-800 ">
+    <div className="bg-yellow-400 flex items-center h-16 mx-40 justify-center gap-10 rounded-xl top-8 relative text-zinc-800">
       {options.map((op) => (
         <OptionItem
           title={op.title}
