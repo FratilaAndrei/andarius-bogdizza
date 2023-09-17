@@ -1,25 +1,5 @@
-import { useEffect, useState } from "react";
-import properLogo from "../../utils/properLogo.jpg";
-
-const Navbar = () => {
-  const [backgroundColor, setBackgroundColor] = useState("transparent");
-
-  useEffect(() => {
-    const scrollHandler = () => {
-      window.scrollY > 0
-        ? setBackgroundColor("white")
-        : setBackgroundColor("transparent");
-    };
-
-    window.addEventListener("scroll", scrollHandler);
-    // se creeaza un eventListener pe window care sa gaseasca scroll-ul
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-      // este foarte bine sa stergi event handler-ul pentru unmount component
-    };
-  }, []);
-
+import properLogo from "../../../utils/properLogo.jpg";
+const NavbarData = () => {
   const NavbarDummyData = [
     { id: 1, label: "HOME", link: "/" },
     { id: 2, label: "DESPRE PROPER PIZZA", link: "/despre" },
@@ -30,6 +10,7 @@ const Navbar = () => {
     { id: 7, label: "CONTACT", link: "/contact" },
   ];
 
+  //TODO Make this getNavbarData into a component
   const getNavbarData = () => {
     return NavbarDummyData.map((option) => (
       <div className="text-center" key={option.id}>
@@ -42,7 +23,7 @@ const Navbar = () => {
           {option.label}
         </a>
         {option.picture && (
-          <a href="/" className="">
+          <a href="/">
             <div className="flex mt-5 ">
               <div className="w-[15px] h-auto bg-logoColor"></div>
               <div className="bg-logoColor w-[180px] max-h-[100px] relative">
@@ -65,18 +46,10 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      className=" h-40 bg-transparent w-full bg-scroll fixed"
-      style={{ backgroundColor }}
-    >
-      {/* <div className="min-h-[60px] bg-navbarColor mt-4 flex "> */}
-      <div className="min-h-[60px] bg-navbarColor mt-4 flex m-auto w-fit px-6 rounded-lg shadow-lg ">
-        <div className="flex items-center h-[60px]  m-auto justify-evenly gap-x-6 ">
-          {getNavbarData()}
-        </div>
-      </div>
+    <div className="flex items-center h-16 m-auto justify-evenly gap-x-6">
+      {getNavbarData()}
     </div>
   );
 };
 
-export default Navbar;
+export default NavbarData;

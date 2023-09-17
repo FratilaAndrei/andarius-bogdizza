@@ -1,5 +1,5 @@
-const Location = () => {
+const LocationPage = () => {
   return <div>Location</div>;
 };
 
-export default Location;
+export default LocationPage;

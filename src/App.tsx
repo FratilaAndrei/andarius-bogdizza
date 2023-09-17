@@ -1,11 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Navbar from "./common/components/Navbar";
-import Blog from "./pages/Blog/Blog.page";
-import Comanda from "./pages/Comanda/Comanda.page";
-import Contact from "./pages/Contact/Contact.page";
-import Despre from "./pages/Despre/Despre.page";
-import HomePage from "./pages/Home/Home.page";
-import Location from "./pages/Location/Location.page";
+import Navbar from "./common/components/Navbar/Navbar";
+import AboutPage from "./pages/About/About.page";
+import BlogPage from "./pages/Blog/Blog.page";
+import OrderPage from "./pages/Comanda/Order.page";
+import ContactPage from "./pages/Contact/Contact.page";
+import HomePage from "./pages/Home/HomePage";
+import LocationPage from "./pages/Location/Location.page";
 import NotFoundPage from "./pages/NotFound/NotFound.page";
 
 const router = createBrowserRouter([
@@ -15,23 +15,23 @@ const router = createBrowserRouter([
   },
   {
     path: "/despre",
-    element: <Despre />,
+    element: <AboutPage />,
   },
   {
     path: "/blog",
-    element: <Blog />,
+    element: <BlogPage />,
   },
   {
     path: "/comanda",
-    element: <Comanda />,
+    element: <OrderPage />,
   },
   {
     path: "/locatii",
-    element: <Location />,
+    element: <LocationPage />,
   },
   {
     path: "/contact",
-    element: <Contact />,
+    element: <ContactPage />,
   },
   {
     path: "*",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <div className=" text-zinc-100">
+    <div className=" text-zinc-100 min-h-screen">
       <Navbar />
       <RouterProvider router={router} />
     </div>
