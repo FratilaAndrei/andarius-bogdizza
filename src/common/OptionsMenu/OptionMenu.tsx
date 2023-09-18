@@ -11,11 +11,14 @@ import {
   GiSaucepan,
 } from "react-icons/gi";
 import { MdOutlineFastfood } from "react-icons/md";
+import { BiChevronDown } from "react-icons/bi";
 
-const options = [
+const Options = [
   {
     title: "Pizza",
     icon: <GiFullPizza />,
+    isDropdown: true,
+    dropdownIcon: <BiChevronDown />,
     label: "TOP",
     reference: "https://www.youtube.com/watch?v=2-vA5yLWBHg&t=14s",
   },
@@ -23,6 +26,7 @@ const options = [
     title: "Meniu Oferte",
     icon: <MdOutlineFastfood />,
     label: "REDUCERE",
+    labelClassName: "bg-lime-500",
     reference: "https://www.youtube.com/watch?v=2-vA5yLWBHg&t=14s",
   },
   {
@@ -59,14 +63,9 @@ const options = [
 
 const OptionMenu = () => {
   return (
-    <div className="bg-yellow-400 flex items-center h-16 mx-40 justify-center gap-10 rounded-xl top-8 relative text-zinc-800">
-      {options.map((op) => (
-        <OptionItem
-          title={op.title}
-          icon={op.icon}
-          label={op.label}
-          reference={op.reference}
-        />
+    <div className="bg-yellow-400 flex items-center h-16 w-[75vw] mx-auto justify-center gap-8 rounded-xl top-8 relative text-zinc-800">
+      {Options.map((op) => (
+        <OptionItem {...op} key={op.title} />
       ))}
     </div>
   );
