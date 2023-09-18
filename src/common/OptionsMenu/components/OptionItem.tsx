@@ -1,6 +1,8 @@
 import { FC, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
+import { BiChevronDown } from "react-icons/bi";
+
 type OptionItemProps = {
   title: string;
   reference: string;
@@ -16,7 +18,6 @@ const OptionItem: FC<OptionItemProps> = ({
   icon,
   label,
   reference,
-  dropdownIcon,
   isDropdown,
   labelClassName,
 }) => {
@@ -55,7 +56,7 @@ const OptionItem: FC<OptionItemProps> = ({
       >
         <i className="text-3xl mr-2">{icon}</i>
         <div className="font-medium flex items-center">
-          {title} {dropdownIcon}
+          {title} {isDropdown && <BiChevronDown />}
         </div>
       </a>
       {label && (
