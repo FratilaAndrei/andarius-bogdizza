@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NavbarData from "./NavbarData";
+import OptionMenu from "../OptionsMenu/OptionMenu";
 
 const Navbar = () => {
   const [backgroundColor, setBackgroundColor] = useState("transparent");
@@ -19,14 +20,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div
-      className=" h-40 bg-transparent w-full fixed"
-      style={{ backgroundColor }}
-    >
-      <div className="bg-navbarColor mt-4 flex m-auto w-fit px-6 rounded-lg shadow-lg ">
-        <NavbarData />
+    <>
+      <div
+        className=" h-40 bg-transparent w-full fixed"
+        style={{ backgroundColor }}
+      >
+        <div className="bg-navbarColor mt-4 flex m-auto w-fit px-6 rounded-lg shadow-lg ">
+          <NavbarData />
+        </div>
       </div>
-    </div>
+      <OptionMenu />
+    </>
   );
 };
 
