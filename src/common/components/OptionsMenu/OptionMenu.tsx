@@ -1,4 +1,4 @@
-import OptionItem from "./components/OptionItem";
+import OptionItem from "./OptionItem";
 
 //* Icon imports
 import { BsCupStraw } from "react-icons/bs";
@@ -60,7 +60,7 @@ const OPTIONS = [
 
 const OptionMenu = () => {
   return (
-    <div className="bg-yellow-400 flex items-center h-16 w-[75vw] mx-auto justify-center gap-8 rounded-xl top-8 relative text-zinc-800">
+    <div className="bg-yellow-400 flex items-center h-16 w-[75vw] transform translate-x-[17%] justify-center gap-8 rounded-xl top-44 text-zinc-800 absolute">
       {OPTIONS.map((op) => (
         <OptionItem {...op} key={op.title} />
       ))}

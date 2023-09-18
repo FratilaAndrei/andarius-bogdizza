@@ -62,7 +62,7 @@ const OptionItem: FC<OptionItemProps> = ({
       {label && (
         <div
           className={twMerge(
-            "absolute -top-2 -right-1 bg-red-500 text-white px-2 rounded-md flex py-1 items-center",
+            "absolute -top-2 -right-3 bg-red-500 text-white px-2 rounded-md flex py-1 items-center",
             labelClassName
           )}
           style={{
