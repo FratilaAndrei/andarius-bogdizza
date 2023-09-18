@@ -1,7 +1,7 @@
 import properLogo from "../../../utils/properLogo.jpg";
 import NavbarLogo from "./NavbarLogo";
 const NavbarData = () => {
-  const NavbarDummyData = [
+  const NAVBAR_DUMMY_DATA = [
     { id: 1, label: "HOME", link: "/" },
     { id: 2, label: "DESPRE PROPER PIZZA", link: "/despre" },
     { id: 3, label: "BLOG", link: "/blog" },
@@ -12,7 +12,7 @@ const NavbarData = () => {
   ];
 
   const getNavbarData = () => {
-    return NavbarDummyData.map((option) => (
+    return NAVBAR_DUMMY_DATA.map((option) => (
       <div className="text-center" key={option.id}>
         <a
           href={option.link as string}
