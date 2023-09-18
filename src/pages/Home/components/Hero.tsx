@@ -1,16 +1,16 @@
-import BackgroundImg from "../../../utils/ProperHomePageBackgroundPic.jpg";
-import pizzaLetter from "../../../utils/pizza-letters.jpg";
+import BackgroundImg from "../../../utils/images/ProperHomePageBackgroundPic.jpg";
+import pizzaLetter from "../../../utils/images/pizza-letters.jpg";
 
 const Hero = () => {
   return (
     <div>
       <div
-        className="h-screen w-full text-white bg-center bg-cover bg-fixed  flex flex-col justify-end  "
+        className="flex h-screen w-full flex-col justify-end bg-cover  bg-fixed bg-center text-white  "
         style={{
           backgroundImage: `url(${BackgroundImg})`,
         }}
       >
-        <div className=" flex flex-col text-center justify-center h-full mt-20">
+        <div className=" mt-20 flex h-full flex-col justify-center text-center">
           <div className="text-6xl font-bold">BEST</div>
           <div className="m-auto my-4">
             <img src={pizzaLetter} alt="pizzaLetter" />
