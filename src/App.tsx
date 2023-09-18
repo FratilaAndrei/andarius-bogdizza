@@ -4,7 +4,7 @@ import AboutPage from "./pages/About/About.page";
 import BlogPage from "./pages/Blog/Blog.page";
 import OrderPage from "./pages/Comanda/Order.page";
 import ContactPage from "./pages/Contact/Contact.page";
-import HomePage from "./pages/Home/HomePage";
+import HomePage from "./pages/Home/Home.page";
 import LocationPage from "./pages/Location/Location.page";
 import NotFoundPage from "./pages/NotFound/NotFound.page";
 
