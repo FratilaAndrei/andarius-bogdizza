@@ -1,4 +1,4 @@
-import properLogo from "../../../utils/properLogo.jpg";
+import properLogo from "../../../utils/images/properLogo.jpg";
 import NavbarLogo from "./NavbarLogo";
 const NavbarData = () => {
   const NAVBAR_DUMMY_DATA = [
@@ -16,7 +16,7 @@ const NavbarData = () => {
       <div className="text-center" key={option.id}>
         <a
           href={option.link as string}
-          className={`text-sm font-medium cursor-pointer ${
+          className={`cursor-pointer text-sm font-medium ${
             location.pathname === option.link ? "text-logoColor" : ""
           }`}
         >
@@ -32,7 +32,7 @@ const NavbarData = () => {
   };
 
   return (
-    <div className="flex items-center h-16 m-auto justify-evenly gap-x-6">
+    <div className="m-auto flex h-16 items-center justify-evenly gap-x-6">
       {getNavbarData()}
     </div>
   );
