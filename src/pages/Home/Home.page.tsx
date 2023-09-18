@@ -1,6 +1,11 @@
+import OptionMenu from "../../common/OptionsMenu/OptionMenu";
+
 const HomePage = () => {
-  return <div>Homepage && Salutare de la Andrei 1</div>;
+  return (
+    <div>
+      <OptionMenu />
+    </div>
+  );
 };
 
 export default HomePage;
-// salut
