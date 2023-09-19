@@ -2,6 +2,7 @@ import { FC, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import { BiChevronDown } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 type OptionItemProps = {
   title: string;
@@ -43,22 +44,22 @@ const OptionItem: FC<OptionItemProps> = ({
         } text-black absolute transition-all overflow-hidden top-full bg-white w-max rounded-sm flex flex-col text-start justify-center px-8 gap-y-4 cursor-default`}
       >
         <p className="font-bold text-base font-sans ">Nu ai gasit ceva?</p>
-        <a
+        <Link
           className="text-sm hover:text-zinc-300"
-          href="https://www.youtube.com/watch?v=9fdqJhNbnSY"
+          to="https://www.youtube.com/watch?v=9fdqJhNbnSY"
         >
           Creeaza-ti propria pizza!
-        </a>
+        </Link>
       </div>
-      <a
-        href={reference}
+      <Link
+        to={reference}
         className="hover:text-black hover:opacity-100 transition duration-400 flex items-center text-[#61443e] text-xl cursor-pointer h-full"
       >
         <i className="text-3xl mr-2">{icon}</i>
         <div className="font-medium flex items-center">
           {title} {isDropdown && <BiChevronDown />}
         </div>
-      </a>
+      </Link>
       {label && (
         <div
           className={twMerge(

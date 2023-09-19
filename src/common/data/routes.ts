@@ -5,3 +5,6 @@ export const ORDER_PAGE_ROUTE = "/comnenzi";
 export const LOCATIONS_PAGE_ROUTE = "/locatii";
 export const CONTACT_PAGE_ROUTE = "/contact";
 export const CART_PAGE_ROUTE = "/cart";
+export const CATEGORY_PIZZA_ROUTE= "/categorie/pizza"
+export const CATEGORY_DESSERTS_ROUTE= "/categorie/desert"
+export const CATEGORY_DRINKS_ROUTE= "/categorie/bauturi"

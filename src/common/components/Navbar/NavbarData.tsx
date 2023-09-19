@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import properLogo from "../../../utils/images/properLogo.jpg";
 import NavbarLogo from "./NavbarLogo";
 const NavbarData = () => {
@@ -14,18 +15,18 @@ const NavbarData = () => {
   const getNavbarData = () => {
     return NAVBAR_DUMMY_DATA.map((option) => (
       <div className="text-center" key={option.id}>
-        <a
-          href={option.link as string}
+        <Link
+          to={option.link as string}
           className={`cursor-pointer text-sm font-medium ${
             location.pathname === option.link ? "text-logoColor" : ""
           }`}
         >
           {option.label}
-        </a>
+        </Link>
         {option.picture && (
-          <a href="/">
+          <Link to="/">
             <NavbarLogo navbarLogo={option.picture} />
-          </a>
+          </Link>
         )}
       </div>
     ));

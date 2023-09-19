@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import NavbarData from "./NavbarData";
 import OptionMenu from "../OptionsMenu/OptionMenu";
+import NavbarData from "./NavbarData";
 
 const Navbar = () => {
   const [backgroundColor, setBackgroundColor] = useState("transparent");
@@ -22,10 +22,10 @@ const Navbar = () => {
   return (
     <>
       <div
-        className=" h-40 bg-transparent w-full fixed"
+        className=" fixed z-50 h-40 w-full bg-transparent"
         style={{ backgroundColor }}
       >
-        <div className="bg-navbarColor mt-4 flex m-auto w-fit px-6 rounded-lg shadow-lg ">
+        <div className="m-auto mt-4 flex w-fit rounded-lg bg-navbarColor px-6 shadow-lg ">
           <NavbarData />
         </div>
       </div>

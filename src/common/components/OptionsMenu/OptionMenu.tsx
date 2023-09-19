@@ -60,7 +60,7 @@ const OPTIONS = [
 
 const OptionMenu = () => {
   return (
-    <div className="bg-yellow-400 flex items-center h-16 w-[75vw] transform translate-x-[17%] justify-center gap-8 rounded-xl top-44 text-zinc-800 absolute">
+    <div className="absolute top-44 flex h-16 w-[75vw] translate-x-[17%] transform items-center justify-center gap-8 rounded-xl bg-yellow-400 text-zinc-800">
       {OPTIONS.map((op) => (
         <OptionItem {...op} key={op.title} />
       ))}
