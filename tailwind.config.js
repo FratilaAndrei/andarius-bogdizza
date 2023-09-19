@@ -7,6 +7,9 @@ export default {
         navbarColor: "#222222",
         logoColor: "#FFE400",
       },
+      screens: {
+        xs: "375px",
+      },
     },
   },
   plugins: [],

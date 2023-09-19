@@ -6,20 +6,20 @@ type navbarLogoProps = {
 
 const NavbarLogo: FC<navbarLogoProps> = ({ navbarLogo }) => {
   return (
-    <div className="flex mt-5 ">
-      <div className="w-[15px] h-auto bg-logoColor"></div>
-      <div className="bg-logoColor w-[180px] max-h-[100px] relative">
+    <div className="xs:w-full xs:mt-5 mt-0 flex w-2/3 sm:w-full">
+      <div className="h-auto w-[15px] bg-logoColor"></div>
+      <div className="xs:max-h-[100px] relative min-h-[80px] w-[180px] bg-logoColor">
         <img
           src={navbarLogo}
           alt="ProperLogo"
-          className="w-full h-full object-cover object-center"
+          className="h-full w-full object-contain object-center"
         />
-        <div className="flex absolute -bottom-13 -right-4  w-[210px] h-[50px]">
-          <div className="w-1/2  border-r-logoColor border-b-transparent border-r-[105px] border-b-[50px]"></div>
-          <div className="w-1/2  border-l-logoColor border-b-transparent border-l-[105px] border-b-[50px]"></div>
+        <div className="-bottom-13  xs:h-[50px] absolute right-1/2 flex w-[210px] translate-x-1/2">
+          <div className="xs:border-r-[105px] xs:border-b-[50px] w-1/2 border-b-[40px] border-r-[70px] border-b-transparent border-r-logoColor"></div>
+          <div className="xs:border-l-[105px] xs:border-b-[50px] w-1/2 border-b-[40px] border-l-[70px] border-b-transparent border-l-logoColor"></div>
         </div>
       </div>
-      <div className="w-[15px] h-auto bg-logoColor"></div>
+      <div className="h-auto w-[15px] bg-logoColor"></div>
     </div>
   );
 };

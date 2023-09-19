@@ -17,14 +17,14 @@ const NavbarData = () => {
       <div className="text-center" key={option.id}>
         <Link
           to={option.link as string}
-          className={`cursor-pointer text-sm font-medium ${
+          className={`hidden cursor-pointer text-sm font-medium xl:flex  ${
             location.pathname === option.link ? "text-logoColor" : ""
           }`}
         >
           {option.label}
         </Link>
         {option.picture && (
-          <Link to="/">
+          <Link to="/" className="">
             <NavbarLogo navbarLogo={option.picture} />
           </Link>
         )}
@@ -33,7 +33,7 @@ const NavbarData = () => {
   };
 
   return (
-    <div className="m-auto flex h-16 items-center justify-evenly gap-x-6">
+    <div className="m-auto flex h-16 min-w-[75vw] items-center justify-evenly gap-x-6">
       {getNavbarData()}
     </div>
   );

@@ -10,7 +10,7 @@ const Hero = () => {
           backgroundImage: `url(${BackgroundImg})`,
         }}
       >
-        <div className=" mt-20 flex h-full flex-col justify-center text-center">
+        <div className=" mx-4 mt-20 flex h-full flex-col justify-center text-center">
           <div className="text-6xl font-bold">BEST</div>
           <div className="m-auto my-4">
             <img src={pizzaLetter} alt="pizzaLetter" />

@@ -41,9 +41,9 @@ const OptionItem: FC<OptionItemProps> = ({
       <div
         className={`${
           isHovered && isDropdown ? "max-h-[200%] py-4" : "max-h-0 py-0"
-        } text-black absolute transition-all overflow-hidden top-full bg-white w-max rounded-sm flex flex-col text-start justify-center px-8 gap-y-4 cursor-default`}
+        } absolute top-full flex w-max cursor-default flex-col justify-center gap-y-4 overflow-hidden rounded-sm bg-white px-8 text-start text-black transition-all`}
       >
-        <p className="font-bold text-base font-sans ">Nu ai gasit ceva?</p>
+        <p className="font-sans text-base font-bold ">Nu ai gasit ceva?</p>
         <Link
           className="text-sm hover:text-zinc-300"
           to="https://www.youtube.com/watch?v=9fdqJhNbnSY"
@@ -53,18 +53,18 @@ const OptionItem: FC<OptionItemProps> = ({
       </div>
       <Link
         to={reference}
-        className="hover:text-black hover:opacity-100 transition duration-400 flex items-center text-[#61443e] text-xl cursor-pointer h-full"
+        className="duration-400 flex h-full cursor-pointer items-center text-xl text-[#61443e] transition hover:text-black hover:opacity-100"
       >
-        <i className="text-3xl mr-2">{icon}</i>
-        <div className="font-medium flex items-center">
+        <i className="mr-2 text-3xl">{icon}</i>
+        <div className="flex items-center text-lg font-medium">
           {title} {isDropdown && <BiChevronDown />}
         </div>
       </Link>
       {label && (
         <div
           className={twMerge(
-            "absolute -top-2 -right-3 bg-red-500 text-white px-2 rounded-md flex py-1 items-center",
-            labelClassName
+            "absolute -right-3 -top-2 flex items-center rounded-md bg-red-500 px-2 py-1 text-white",
+            labelClassName,
           )}
           style={{
             transform: isHovered
@@ -73,7 +73,7 @@ const OptionItem: FC<OptionItemProps> = ({
             transition: "transform 0.3s ease",
           }}
         >
-          <span className="italic text-xs font-bold">{label}</span>
+          <span className="text-xs font-bold italic">{label}</span>
         </div>
       )}
     </div>
