@@ -5,8 +5,8 @@ import NavbarLogo from "./NavbarLogo";
 interface NavbarOption {
   id: number;
   label?: string;
-  link: string; // Ensure link is of type string
-  picture?: string; // Optional picture
+  link: string;
+  picture?: string;
 }
 
 const NavbarData = () => {
@@ -24,7 +24,7 @@ const NavbarData = () => {
     return NAVBAR_DUMMY_DATA.map((option) => (
       <div className="text-center" key={option.id}>
         <Link
-          to={option.link} // option.link is guaranteed to be a string
+          to={option.link}
           className={`hidden cursor-pointer text-sm font-medium xl:flex  ${
             location.pathname === option.link ? "text-logoColor" : ""
           }`}
