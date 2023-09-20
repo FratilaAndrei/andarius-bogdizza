@@ -53,7 +53,7 @@ const OptionItem: FC<OptionItemProps> = ({
       </div>
       <Link
         to={reference}
-        className="duration-400 flex h-full cursor-pointer items-center text-xl text-[#61443e] transition hover:text-black hover:opacity-100"
+        className="duration-400 flex h-full cursor-pointer items-center text-xl text-[#61443e] transition hover:text-black "
       >
         <i className="mr-2 text-3xl">{icon}</i>
         <div className="flex items-center text-lg font-medium">

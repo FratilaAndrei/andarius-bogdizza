@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import properLogo from "../../../utils/images/properLogo.jpg";
 import NavbarLogo from "./NavbarLogo";
+
+interface NavbarOption {
+  id: number;
+  label?: string;
+  link: string; // Ensure link is of type string
+  picture?: string; // Optional picture
+}
+
 const NavbarData = () => {
-  const NAVBAR_DUMMY_DATA = [
+  const NAVBAR_DUMMY_DATA: NavbarOption[] = [
     { id: 1, label: "HOME", link: "/" },
     { id: 2, label: "DESPRE PROPER PIZZA", link: "/despre" },
     { id: 3, label: "BLOG", link: "/blog" },
-    { id: 4, picture: properLogo },
+    { id: 4, picture: properLogo, link: "/" },
     { id: 5, label: "COMANDA ONLINE", link: "/comanda" },
     { id: 6, label: "LOCATII", link: "/locatii" },
     { id: 7, label: "CONTACT", link: "/contact" },
@@ -16,7 +24,7 @@ const NavbarData = () => {
     return NAVBAR_DUMMY_DATA.map((option) => (
       <div className="text-center" key={option.id}>
         <Link
-          to={option.link as string}
+          to={option.link} // option.link is guaranteed to be a string
           className={`hidden cursor-pointer text-sm font-medium xl:flex  ${
             location.pathname === option.link ? "text-logoColor" : ""
           }`}
@@ -24,7 +32,7 @@ const NavbarData = () => {
           {option.label}
         </Link>
         {option.picture && (
-          <Link to="/" className="">
+          <Link to="/">
             <NavbarLogo navbarLogo={option.picture} />
           </Link>
         )}

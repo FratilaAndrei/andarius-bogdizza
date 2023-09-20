@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
 type OrderCategoryProps = {
+  key: number;
   image: string;
   label: string;
   className: string;

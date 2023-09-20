@@ -6,32 +6,40 @@ import OrderCategory from "./OrderCategory";
 const OrderCategories = () => {
   const ORDER_CATEGORY_DATA = [
     {
+      id: 1,
       image: OrderCategoryPizza,
       label: "Pizza noastra",
-      className: "col-span-3 lg:row-span-1 lg:col-span-2 lg:row-span-2",
       link: "/categorie/pizza",
     },
     {
+      id: 2,
       image: OrderCategoryDesserts,
       label: "Desert",
-      className: "col-span-3 lg:row-span-1 lg:col-span-2 lg:row-span-1",
       link: "/categorie/desert",
     },
     {
+      id: 3,
       image: OrderCategoryDrinks,
       label: "Bauturi",
-      className: "col-span-3 lg:row-span-1 lg:grid-rows-1 lg:col-span-2",
       link: "/categorie/bauturi",
     },
   ];
+
+  const getCategoryGridType = (id: number) => {
+    if (id === 1) return "col-span-3 lg:row-span-1 lg:col-span-2 lg:row-span-2";
+    else if (id === 2)
+      return "col-span-3 lg:row-span-1 lg:col-span-2 lg:row-span-1";
+    else return "col-span-3 lg:row-span-1 lg:grid-rows-1 lg:col-span-2";
+  };
 
   const getOrderCategory = () => {
     return ORDER_CATEGORY_DATA.map((category) => (
       <OrderCategory
         label={category.label}
         image={category.image}
-        className={category.className}
+        className={`${getCategoryGridType(category.id)}`}
         link={category.link}
+        key={category.id}
       />
     ));
   };
