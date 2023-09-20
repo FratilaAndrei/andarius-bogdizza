@@ -6,19 +6,19 @@ import OrderCategory from "./OrderCategory";
 const OrderCategories = () => {
   const ORDER_CATEGORY_DATA = [
     {
-      id: 1,
+      id: 0,
       image: OrderCategoryPizza,
       label: "Pizza noastra",
       link: "/categorie/pizza",
     },
     {
-      id: 2,
+      id: 1,
       image: OrderCategoryDesserts,
       label: "Desert",
       link: "/categorie/desert",
     },
     {
-      id: 3,
+      id: 2,
       image: OrderCategoryDrinks,
       label: "Bauturi",
       link: "/categorie/bauturi",
@@ -26,10 +26,9 @@ const OrderCategories = () => {
   ];
 
   const getCategoryGridType = (id: number) => {
-    if (id === 1) return "col-span-3 lg:row-span-1 lg:col-span-2 lg:row-span-2";
-    else if (id === 2)
-      return "col-span-3 lg:row-span-1 lg:col-span-2 lg:row-span-1";
-    else return "col-span-3 lg:row-span-1 lg:grid-rows-1 lg:col-span-2";
+    if (id % 3 === 0)
+      return "col-span-3 lg:row-span-1 lg:col-span-2 lg:row-span-2";
+    else return "col-span-3  lg:col-span-2 lg:row-span-1";
   };
 
   const getOrderCategory = () => {
