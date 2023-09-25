@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import OptionMenu from "../OptionsMenu/OptionMenu";
 import NavbarData from "./NavbarData";
+// import Badges from "../Badges/Badges";
 
 const Navbar = () => {
   const [backgroundColor, setBackgroundColor] = useState("transparent");
@@ -30,6 +31,9 @@ const Navbar = () => {
         </div>
       </div>
       <OptionMenu />
+      {/* <div className="fixed z-50 mt-20">
+        <Badges />
+      </div> */}
     </>
   );
 };
