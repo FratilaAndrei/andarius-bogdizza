@@ -31,9 +31,6 @@ const Navbar = () => {
         </div>
       </div>
       <OptionMenu />
-      {/* <div className="fixed z-50 mt-20">
-        <Badges />
-      </div> */}
     </>
   );
 };
