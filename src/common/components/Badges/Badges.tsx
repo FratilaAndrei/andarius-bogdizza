@@ -4,30 +4,38 @@ import { FaPhone, FaRegHeart } from "react-icons/fa";
 import { FiShoppingBag } from "react-icons/fi";
 import { GrSearch } from "react-icons/gr";
 import BadgeItem from "./BadgeItem";
+import { PRODUCTS } from "../../data/constants";
 
 type BadgesProps = {
   setDisplayShoppingCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const Badges: FC<BadgesProps> = ({ setDisplayShoppingCart }) => {
+  const totalQuantityInCart = PRODUCTS.reduce(
+    (total, product) =>
+      product.quantityInCart ? total + product.quantityInCart : total,
+    0,
+  );
+
   const BADGE_DATA = [
     {
-      id: 0,
+      id: "0",
       title: "Comanda la Telefon",
-      telephoneNumber: "0764 168 237 ",
+      telephoneNumber: "0764 168 237",
       telephoneIcon: <FaPhone />,
     },
     {
-      id: 1,
+      id: "1",
       personIcon: <BsFillPersonFill />,
       favoriteIcon: <FaRegHeart />,
       shoppingCartIcon: <FiShoppingBag />,
       searchIcon: <GrSearch />,
+      productCount: totalQuantityInCart,
     },
   ];
 
   return (
-    <div className="fixed top-36 z-50 flex w-full justify-around ">
+    <div className="fixed top-28 z-50 flex w-full justify-around ">
       {BADGE_DATA.map((badge) => (
         <BadgeItem
           key={badge.id}

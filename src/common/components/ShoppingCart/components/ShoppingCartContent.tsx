@@ -17,8 +17,6 @@ const ShoppingCartContent: FC<ShoppingCartContentProps> = ({
 }) => {
   if (!productsInCart.length) return <EmptyShoppingCart />;
 
-  console.log(setProductsInCart.length);
-
   return (
     <div className="flex h-screen w-full flex-col justify-between">
       <div>

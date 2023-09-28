@@ -3,7 +3,7 @@ import properLogo from "../../../utils/images/properLogo.jpg";
 import NavbarLogo from "./NavbarLogo";
 
 interface NavbarOption {
-  id: number;
+  id: string;
   label?: string;
   link: string;
   picture?: string;
@@ -11,13 +11,13 @@ interface NavbarOption {
 
 const NavbarData = () => {
   const NAVBAR_DUMMY_DATA: NavbarOption[] = [
-    { id: 1, label: "HOME", link: "/" },
-    { id: 2, label: "DESPRE PROPER PIZZA", link: "/despre" },
-    { id: 3, label: "BLOG", link: "/blog" },
-    { id: 4, picture: properLogo, link: "/" },
-    { id: 5, label: "COMANDA ONLINE", link: "/comanda" },
-    { id: 6, label: "LOCATII", link: "/locatii" },
-    { id: 7, label: "CONTACT", link: "/contact" },
+    { id: "0", label: "HOME", link: "/" },
+    { id: "1", label: "DESPRE PROPER PIZZA", link: "/despre" },
+    { id: "2", label: "BLOG", link: "/blog" },
+    { id: "3", picture: properLogo, link: "/" },
+    { id: "4", label: "COMANDA ONLINE", link: "/comanda" },
+    { id: "5", label: "LOCATII", link: "/locatii" },
+    { id: "6", label: "CONTACT", link: "/contact" },
   ];
 
   const getNavbarData = () => {
