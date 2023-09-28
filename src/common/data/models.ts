@@ -4,5 +4,7 @@ export interface ProductModel {
   image: string;
   title: string;
   price: number;
+  ingredients: string;
+  category: string;
   quantityInCart?: number;
 }
