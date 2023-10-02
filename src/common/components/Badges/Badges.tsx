@@ -4,19 +4,12 @@ import { FaPhone, FaRegHeart } from "react-icons/fa";
 import { FiShoppingBag } from "react-icons/fi";
 import { GrSearch } from "react-icons/gr";
 import BadgeItem from "./BadgeItem";
-import { PRODUCTS } from "../../data/constants";
 
 type BadgesProps = {
   setDisplayShoppingCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const Badges: FC<BadgesProps> = ({ setDisplayShoppingCart }) => {
-  const totalQuantityInCart = PRODUCTS.reduce(
-    (total, product) =>
-      product.quantityInCart ? total + product.quantityInCart : total,
-    0,
-  );
-
   const BADGE_DATA = [
     {
       id: "0",
@@ -30,7 +23,6 @@ const Badges: FC<BadgesProps> = ({ setDisplayShoppingCart }) => {
       favoriteIcon: <FaRegHeart />,
       shoppingCartIcon: <FiShoppingBag />,
       searchIcon: <GrSearch />,
-      productCount: totalQuantityInCart,
     },
   ];
 

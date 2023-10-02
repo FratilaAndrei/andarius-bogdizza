@@ -4,6 +4,14 @@ export interface ProductModel {
   image: string;
   title: string;
   price: number;
-  quantityInCart?: number;
-  category: string;
+  quantityInCart: number;
+  category: FoodCategory ;
 }
+
+export enum FoodCategory {
+  Pizza,
+  Paste,
+  Desert, 
+  Snack,
+}
+
