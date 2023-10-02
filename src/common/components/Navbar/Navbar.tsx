@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import OptionMenu from "../OptionsMenu/OptionMenu";
 import NavbarData from "./NavbarData";
+// import Badges from "../Badges/Badges";
 
 const Navbar = () => {
   const [backgroundColor, setBackgroundColor] = useState("transparent");
@@ -22,7 +23,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className=" fixed z-50 h-40 w-full bg-transparent"
+        className=" fixed z-50 h-44 w-full bg-transparent"
         style={{ backgroundColor }}
       >
         <div className="m-auto mt-4 flex w-fit bg-navbarColor px-6 shadow-lg xs:rounded-lg ">
