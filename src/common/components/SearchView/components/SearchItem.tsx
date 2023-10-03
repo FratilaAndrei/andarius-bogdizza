@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 type SearchItemProps = {
   title: string;
@@ -7,12 +8,15 @@ type SearchItemProps = {
   category: string;
 };
 
-//TODO: Change the anchor to Link
-
-const SearchItem: FC<SearchItemProps> = ({ title, ingredients, image }) => {
+const SearchItem: FC<SearchItemProps> = ({
+  title,
+  ingredients,
+  image,
+  category,
+}) => {
   return (
     <>
-      <a className="cursor-pointer" href="#">
+      <Link className="cursor-pointer" to={`${category}/${title}`}>
         <div className="mx-auto my-4 flex gap-3 text-xs">
           <img src={image} className="h-12 w-12 rounded-sm"></img>
           <div className="flex flex-col text-zinc-700">
@@ -20,7 +24,7 @@ const SearchItem: FC<SearchItemProps> = ({ title, ingredients, image }) => {
             <p className="line-clamp-2">{ingredients}</p>
           </div>
         </div>
-      </a>
+      </Link>
       <hr className="text-zinc-300" />
     </>
   );

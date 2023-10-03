@@ -1,6 +1,7 @@
 import React, { FC, Dispatch } from "react";
 import { PRODUCTS } from "../../../data/constants";
 import { ProductModel } from "../../../data/models";
+import { useSearchParams } from "react-router-dom";
 
 type SearchBarProps = {
   searchItem: string;
@@ -13,7 +14,9 @@ const SearchBar: FC<SearchBarProps> = ({
   onSearchItem,
   onFilteredPizzaData,
 }) => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleChange = (e: React.FormEvent) => {
     e.preventDefault();
 
     const filteredData = PRODUCTS.filter(
@@ -25,9 +28,20 @@ const SearchBar: FC<SearchBarProps> = ({
     onFilteredPizzaData(filteredData);
   };
 
+  const handleRedirect = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setSearchParams({ search: searchItem });
+    onSearchItem("");
+  };
+
   return (
     <div className="mb-8 mt-16 flex w-full flex-col items-center text-center text-zinc-700">
-      <form className="w-full" onChange={handleSubmit}>
+      <form
+        className="w-full"
+        onChange={handleChange}
+        onSubmit={handleRedirect}
+      >
         <input
           type="text"
           placeholder="Cautare produse.."
